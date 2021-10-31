@@ -6,8 +6,6 @@
 ;; Fix paths in case we are unfortunately running under Windows.
 (if (eq system-type 'windows-nt)
     (progn
-      (setq user-emacs-directory "~/dotfiles/emacs.d/")
-      (setq user-init-file (concat user-emacs-directory "init.el"))
       (setq default-directory "~/")))
 
 ;; Environment settings.
