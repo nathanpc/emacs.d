@@ -3,10 +3,11 @@
 ;;
 ;; Author: Nathan Campos <nathanpc@dreamintech.net>
 
-(defun indent-buffer ()
-  "Indent a whole buffer"
+(defun format-buffer ()
+  "Properly formats an entire buffer"
   (interactive)
-  (indent-region (point-min) (point-max)))
+  (indent-region (point-min) (point-max))
+  (tabify (point-min) (point-max)))
 
 (defun c-doc-block-comment-return ()
   "Auto-completion of documentation comment blocks after RET"
