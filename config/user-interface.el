@@ -18,8 +18,9 @@
 (add-hook 'command-line-functions #'inhibit-startup-screen-for-file)
 
 ;; Set default theme.
-(custom-set-variables '(frame-background-mode 'dark))
-(invert-face 'default)
+;(custom-set-variables '(frame-background-mode 'dark))
+;(invert-face 'default)
+(load-theme 'wombat)
 
 ;; Make Emacs look more like a normal text editor.
 (transient-mark-mode 1)             ; Highlight selection.
