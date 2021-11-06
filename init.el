@@ -54,3 +54,7 @@
 (require 'key-bindings)
 (require 'code-styling)
 (require 'mode-settings)
+
+;; Minor fix to the wombat theme
+(custom-set-faces
+ '(highlight ((t (:background "#454545" :foreground "#ffffff" :underline nil)))))
