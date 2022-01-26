@@ -17,4 +17,7 @@
 (add-to-list 'auto-mode-alist '("\\.psgi\\'" . cperl-mode))
 (add-to-list 'auto-mode-alist '("cpanfile\\'" . cperl-mode))
 
+;; Open Bamboo Lisp files in Scheme mode.
+(add-to-list 'auto-mode-alist '("\\.bam\\'" . scheme-mode))
+
 (provide 'mode-settings)
