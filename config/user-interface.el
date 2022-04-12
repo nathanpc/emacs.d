@@ -17,9 +17,6 @@
 ;; Inhibit the startup screen only when appropriate.
 (add-hook 'command-line-functions #'inhibit-startup-screen-for-file)
 
-;; Set default theme.
-(load-theme 'wombat)
-
 ;; Make Emacs look more like a normal text editor.
 (transient-mark-mode 1)             ; Highlight selection.
 (delete-selection-mode 1)           ; Replace selected text if I start typing.
@@ -40,7 +37,7 @@
 (setq scroll-step 1)                        ; Keyboard scroll one line at time.
 (setq scroll-conservatively 10000)          ; Move minimum when cursor exits view.
 (setq scroll-preserve-screen-position nil)  ; Cursor moves when scrolling.
-(setq mouse-wheel-scroll-amount '(1))       ; Mouse scroll moves 1 line at time.
+(setq mouse-wheel-scroll-amount '(3))       ; Mouse scroll moves 1 line at time.
 (setq mouse-wheel-progressive-speed nil)    ; Disable accelerated scrolling.
 (setq mouse-wheel-follow-mouse t)           ; Only scroll the window under mouse.
 (setq redisplay-dont-pause nil)             ; Prioritize events instead of redraw.
@@ -69,8 +66,5 @@
 ;; Miscellaneous.
 (defalias 'yes-or-no-p 'y-or-n-p)  ; Use y or n instead of yes or no in prompts.
 (setq echo-keystrokes 0.1)         ; Show key combination hints faster.
-
-;; Man completion.
-(require 'man-completion)
 
 (provide 'user-interface)

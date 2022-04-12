@@ -16,5 +16,30 @@
 (eval-and-compile
   (setq use-package-always-ensure t
         use-package-expand-minimally t))
+(eval-when-compile
+  (require 'use-package))
+
+;;
+;; Theming and User Interface
+;;
+
+; Nord theme (font face)
+(use-package nord-theme
+  :config (load-theme 'nord t))
+
+; All the Icons
+(use-package all-the-icons
+  :if (display-graphic-p))
+
+; DOOM Modeline
+(use-package doom-modeline
+  :init (doom-modeline-mode t))
+
+;;
+;; Miscellaneous
+;;
+
+;; Man completion.
+(require 'man-completion)
 
 (provide 'external-packages)
