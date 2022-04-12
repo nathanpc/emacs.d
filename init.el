@@ -49,6 +49,7 @@
 
 ;; Load our configuration modules.
 (add-to-list 'load-path (concat user-emacs-directory "config"))
+(require 'external-packages)
 (require 'custom-functions)
 (require 'user-interface)
 (require 'key-bindings)
