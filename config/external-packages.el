@@ -35,6 +35,18 @@
 (use-package doom-modeline
   :init (doom-modeline-mode t))
 
+; Dashboard
+(use-package dashboard
+  :config
+  (setq dashboard-startup-banner 'logo)
+  (setq dashboard-set-heading-icons t)
+  (setq dashboard-set-file-icons t)
+  (setq dashboard-set-navigator t)
+  (setq dashboard-items '((recents  . 15)
+                          (bookmarks . 8)
+                          (registers . 8)))
+  (dashboard-setup-startup-hook))
+
 ;;
 ;; Miscellaneous
 ;;
