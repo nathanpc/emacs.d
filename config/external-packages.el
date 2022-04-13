@@ -97,6 +97,16 @@
   :init (global-git-gutter-mode t))
 
 ;;
+;; Auto-Completion and Snippets
+;;
+
+; Company Mode
+(use-package company
+  :init (global-company-mode)
+  :config
+  (setq company-idle-delay 0))  ; Auto-complete instantly.
+
+;;
 ;; Miscellaneous
 ;;
 
