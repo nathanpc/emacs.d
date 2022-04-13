@@ -33,7 +33,16 @@
 
 ; DOOM Modeline
 (use-package doom-modeline
-  :init (doom-modeline-mode t))
+  :init (doom-modeline-mode t)
+  :hook (text-mode-hook . show-word-count-doom-modeline)
+  :config
+  (setq doom-modeline-buffer-file-name-style
+		'relative-from-project)                  ; Show path relative to project.
+  (setq doom-modeline-indent-info t)             ; Show indentation information.
+  (setq doom-modeline-minor-modes
+		(featurep 'minions))                     ; Display minor modes.
+  (defun show-word-count-doom-modeline ()
+	(setq doom-modeline-enable-word-count t)))   ; Display word count text mode.
 
 ; Dashboard
 (use-package dashboard
