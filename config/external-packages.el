@@ -107,6 +107,32 @@
   (setq company-idle-delay 0))  ; Auto-complete instantly.
 
 ;;
+;; Programming Languages
+;;
+
+; Improved JavaScript Mode
+(use-package js2-mode
+  :mode "\\.js$"
+  :hook (js2-mode-hook . js2-imenu-extras-mode)
+  :config
+  (setq-default
+   js2-auto-indent-p t
+   js2-cleanup-whitespace t
+   js2-enter-indents-newline t
+   js2-indent-on-enter-key t
+   js2-global-externs (list "window" "module" "require" "buster" "sinon" "assert"
+							"refute" "setTimeout" "clearTimeout" "setInterval"
+							"location" "clearInterval" "__dirname" "console"
+							"JSON" "jQuery" "$")))
+
+; Better JavaScript Code Jumps
+(use-package xref-js2
+  :init
+  (add-hook 'js2-mode-hook
+			(lambda () (add-hook 'xref-backend-functions
+								 #'xref-js2-xref-backend nil t))))
+
+;;
 ;; Miscellaneous
 ;;
 
