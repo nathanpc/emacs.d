@@ -158,10 +158,14 @@
 								 #'xref-js2-xref-backend nil t))))
 
 ;;
-;; Miscellaneous
+;; Manually Installed Packages
 ;;
 
 ;; Man completion.
 (require 'man-completion)
+
+; Rich Text Format
+(autoload 'rtf-mode "rtf-mode" "RTF mode" t)
+(add-to-list 'auto-mode-alist '("\\.rtf$" . rtf-mode))
 
 (provide 'external-packages)
