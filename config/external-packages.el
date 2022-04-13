@@ -7,6 +7,8 @@
 (require 'package)
 (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("user42" .
+								 "https://download.tuxfamily.org/user42/elpa/packages/"))
 (package-initialize)
 
 ; Setup use-package.
@@ -115,6 +117,23 @@
   :init
   (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
   (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
+
+; Perl POD Preview
+(use-package perl-pod-preview
+  :init
+  (autoload 'perl-pod-preview "perl-pod-preview" nil t)
+  (eval-after-load "cperl-mode"
+    '(define-key cperl-mode-map [f8] 'perl-pod-preview)))
+
+; Better Perl POD Editing
+(use-package perl-pod-gt
+  :init
+  (autoload 'perl-pod-gt-double "perl-pod-gt" nil t)
+  (autoload 'perl-pod-gt-single "perl-pod-gt" nil t)
+  (autoload 'perl-pod-gt-enable "perl-pod-gt")
+  (add-hook 'perl-mode-hook 'perl-pod-gt-enable)
+  (add-hook 'cperl-mode-hook 'perl-pod-gt-enable)
+  (add-hook 'pod-mode-hook   'perl-pod-gt-enable))
 
 ; Improved JavaScript Mode
 (use-package js2-mode
