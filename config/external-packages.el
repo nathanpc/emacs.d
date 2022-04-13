@@ -56,6 +56,46 @@
                           (registers . 8)))
   (dashboard-setup-startup-hook))
 
+; Dimmer
+(use-package dimmer
+  :init (dimmer-mode)
+  :config
+  (setq dimmer-fraction 0.35))  ; Make other buffers dimmer.
+
+;;
+;; Indentation, Fringe, and other Editor Aesthetics
+;;
+
+; Highlight Escape Sequences
+(use-package highlight-escape-sequences
+  :hook (prog-mode-hook . hes-mode))
+
+; Highlight Numbers
+(use-package highlight-numbers
+  :hook (prog-mode-hook . highlight-numbers-mode))
+
+; Rainbow Mode
+(use-package rainbow-mode
+  :init
+  (dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook))
+	(add-hook hook 'rainbow-mode)))
+
+; Rainbow Delimiters
+(use-package rainbow-delimiters
+  :hook (prog-mode-hook . rainbow-delimiters-mode))
+
+; Highlight Indent Guides
+(use-package highlight-indent-guides
+  :config
+  (setq highlight-indent-guides-method 'character)           ; Thin line style.
+  :init
+  (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)   ; Show guides in code.
+  (add-hook 'text-mode-hook 'highlight-indent-guides-mode))  ; Show guides in text.
+
+; Git Gutter Fringe
+(use-package git-gutter-fringe
+  :init (global-git-gutter-mode t))
+
 ;;
 ;; Miscellaneous
 ;;
