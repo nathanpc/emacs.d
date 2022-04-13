@@ -110,6 +110,12 @@
 ;; Programming Languages
 ;;
 
+; Markdown
+(use-package markdown-mode
+  :init
+  (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
+
 ; Improved JavaScript Mode
 (use-package js2-mode
   :mode "\\.js$"
