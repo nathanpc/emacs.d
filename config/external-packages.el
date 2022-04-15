@@ -98,6 +98,12 @@
 (use-package git-gutter-fringe
   :init (global-git-gutter-mode t))
 
+; NeoTree
+(use-package neotree
+  :config
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+  (global-set-key [f8] 'neotree-toggle))
+
 ;;
 ;; Auto-Completion and Snippets
 ;;
