@@ -18,6 +18,7 @@
 (add-hook 'command-line-functions #'inhibit-startup-screen-for-file)
 
 ;; Make Emacs look more like a normal text editor.
+(setq-default cursor-type 'bar)     ; Use the common, thin style cursor.
 (transient-mark-mode 1)             ; Highlight selection.
 (delete-selection-mode 1)           ; Replace selected text if I start typing.
 (set-scroll-bar-mode 'right)        ; Put the scrollbar where it should be.
