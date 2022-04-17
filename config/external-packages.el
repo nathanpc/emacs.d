@@ -5,6 +5,7 @@
 
 ; Initialize Emacs's built-in package manager.
 (require 'package)
+(setq package-check-signature nil)  ; Fix for ELPA bug in Emacs 27.1.
 (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("user42" .
