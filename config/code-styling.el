@@ -12,6 +12,11 @@
 (setq-default c-basic-indent 4)    ; Indent C code with 4 spaces.
 (setq c-default-style "java")      ; The only way C code should look like.
 
+;; Fix some of the issues with C++ class access label indentation.
+(c-set-offset 'access-label 0)
+(c-set-offset 'inclass 0)
+(c-set-offset 'topmost-intro 4)
+
 ;; Highlight parenthesis.
 (setq show-paren-delay 0)             ; Instantly show the matching paren.
 (setq show-paren-style 'parenthesis)  ; Highlight the matching paren only.
